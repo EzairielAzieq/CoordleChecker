@@ -7,8 +7,8 @@ public class App {
         BST tree = d.tree;
 
         System.out.println("Enter a word: ");
-        String word = sc.nextLine();
-        if (tree.search(word)) {
+        String word = sc.next();
+        if (tree.search(word.toLowerCase())) {
             System.out.println(word + " is a valid word");
         } else {
             System.out.println(word + " is not a valid word");

@@ -73,18 +73,16 @@ class BST {
     }
 
     boolean search(String key) {
-        root = searchRec(root, key);
-        if (root != null)
-            return true;
-        else
-            return false;
+       return searchRec(root, key);
     }
 
-    public Node searchRec(Node root, String key) {
-        if (root == null || root.key.equals(key))
-            return root;
+    public boolean searchRec(Node root, String key) {
+        if (root == null)
+            return false;
+        if (key.equals(root.key))
+            return true;
         if (key.compareTo(root.key) < 0)
-            return searchRec(root.right, key);
-        return searchRec(root.left, key);
+            return searchRec(root.left, key);
+        return searchRec(root.right, key);
     }
 }
